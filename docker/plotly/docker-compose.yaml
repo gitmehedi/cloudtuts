@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  web:
+    image: plotly:latest
+    restart: always
+    container_name: plotly
+    ports:
+      - 8800:8800

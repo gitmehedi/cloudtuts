@@ -1,5 +1,3 @@
-FROM postgres:10.19
+FROM kodekloud/simple-webapp
 
-MAINTAINER "MD MEHEDI HASAN <git.mehedi@gmail.com>"
-
-CMD ["postgres"]
+EXPOSE 8900

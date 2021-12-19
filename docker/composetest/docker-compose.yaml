@@ -4,6 +4,7 @@ services:
     build: .
     ports:
       - 8000:8000
+    container_name: flaskcode
   cache:
     image: "redis:alpine"
 

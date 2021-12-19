@@ -1,0 +1,19 @@
+version: '3'
+services:
+  product-service:
+    image: products:latest
+    container_name: products
+    ports:
+      - 5002:80
+    volumes:
+      - ./products:/code/
+  website:
+    image: php:apache
+    ports:
+      - 5003:80
+    volumes:
+      - ./website:/var/www/html
+    depends_on:
+      - product-service
+
+

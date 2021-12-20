@@ -1,0 +1,25 @@
+version: "3"
+services:
+  redis:
+    image: redis
+    container_name: redis-container
+    networks:
+      - nr_network
+  web:
+    image: nginx
+    container_name: ng-container
+    ports:
+    - 8050:80
+    links:
+      - redis
+    volumes:
+    - nginx_html:/usr/share/nginx/html:rw
+    networks:
+      - nr_network
+volumes:
+  nginx_html: {}
+
+networks:
+  nr_network:
+    driver: bridge
+

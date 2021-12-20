@@ -9,6 +9,7 @@ services:
       - ./products:/code/
   website:
     image: php:apache
+    container_name: website
     ports:
       - 5003:80
     volumes:

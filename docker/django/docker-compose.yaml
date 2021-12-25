@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+    container_name: restaurant-app
+    ports:
+      - 8000:8000
+    environment:
+      - DB_HOST=db
+      - DB_NAME=restaurant
+      - DB_USER=restaurant
+      - DB_PASS=code200!
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    container_name: restaurant-db
+    environment:
+      - POSTGRES_DB=restaurant
+      - POSTGRES_USER=restaurant
+      - POSTGRES_PASSWORD=code200!
+    ports:
+      - 5432:5432
+
+

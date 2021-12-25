@@ -1,2 +1,5 @@
 Django==3.2
 psycopg2-binary==2.9.2
+django-jsonfield==1.4.0
+djangorestframework==3.11.0
+python-dotenv

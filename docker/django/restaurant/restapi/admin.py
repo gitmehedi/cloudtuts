@@ -1,5 +1,5 @@
 from django.contrib import admin
-from restapi.models import RestaurantModel, FoodMenuModel
+from restapi.models import Restaurant, FoodMenu
 
-admin.site.register(RestaurantModel)
-admin.site.register(FoodMenuModel)
+admin.site.register(Restaurant)
+admin.site.register(FoodMenu)

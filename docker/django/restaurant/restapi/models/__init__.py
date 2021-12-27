@@ -1,2 +1,2 @@
-from .restaurant import RestaurantModel
-from .foodmenu import FoodMenuModel
+from .restaurant import Restaurant
+from .foodmenu import FoodMenu

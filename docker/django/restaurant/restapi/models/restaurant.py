@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class RestaurantModel(models.Model):
+class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     contact = models.CharField(max_length=14, default=None)
     active = models.BooleanField(default=True)

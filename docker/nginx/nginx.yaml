@@ -16,6 +16,7 @@ spec:
 status:
   loadBalancer: {}
 ---
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null

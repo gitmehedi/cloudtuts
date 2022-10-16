@@ -44,9 +44,9 @@ spec:
             value: odoo
           - name: PASSWORD
             value: password
-          # securityContext:
-          #   privileged: true
-          #   runAsUser: 0
+          securityContext:
+            privileged: true
+            runAsUser: 0
           ports:
             - containerPort: 8069
               name: odoo

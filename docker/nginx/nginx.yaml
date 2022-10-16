@@ -36,10 +36,13 @@ spec:
       name: web
     spec:
       containers:
-      - image: nginx
+      - image: gitmehedi/
         name: web
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: nginx-vol
+          mountPath: /usr/share/nginx/html/
         resources: {}
       volumes:
       - name: nginx-vol

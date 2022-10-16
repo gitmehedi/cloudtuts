@@ -64,7 +64,7 @@ spec:
   capacity:
     storage: 2Gi
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: standard
+  storageClassName: fast
   hostPath:
     path: /mnt/nginxweb001/
 ---
@@ -77,7 +77,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: standard
+  storageClassName: fast
   resources:
     requests:
       storage: 2Gi

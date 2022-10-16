@@ -48,7 +48,7 @@ spec:
       volumes:
       - name: nginx-vol
         persistentVolumeClaim:
-          claimName: nginxweb001
+          claimName: nginx-web
       dnsPolicy: ClusterFirst
       restartPolicy: Always
 status: {}

@@ -8,13 +8,10 @@ metadata:
   name: web
 spec:
   ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
+    - port: 80
   selector:
     tier: web
-status:
-  loadBalancer: {}
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -67,7 +64,7 @@ spec:
   capacity:
     storage: 2Gi
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: manual
+  storageClassName: standard
   hostPath:
     path: /mnt/nginxweb001/
 ---
@@ -80,7 +77,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: manual
+  storageClassName: standard
   resources:
     requests:
       storage: 2Gi

@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: .
+    container_name: chatbox
+    ports:
+      - 8967:8967

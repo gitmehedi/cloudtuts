@@ -37,7 +37,7 @@ spec:
       name: web
     spec:
       containers:
-      - image: gitmehedi/
+      - image: gitmehedi/web_tier:dev
         name: web
         ports:
         - containerPort: 80

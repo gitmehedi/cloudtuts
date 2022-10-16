@@ -33,7 +33,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        tier: web
+        app: web
       name: web
     spec:
       containers:

@@ -27,6 +27,9 @@ check_config "db_password" "$PASSWORD"
 mv /mnt/addons/* /mnt/extra-addons
 chmod 777 -R /mnt/extra-addons
 chown odoo:odoo -R /mnt/extra-addons
+chmod 777 -R /mnt/extra-addons
+chown odoo:odoo -R /var/lib/odoo
+
 rm -rf /mnt/addons
 
 

@@ -55,8 +55,6 @@ spec:
             mountPath: /var/lib/odoo
           - name: emk-pvc-apps-addons-vol
             mountPath: /mnt/extra-addons
-          - name: emk-pv-apps-config-vol
-            mountPath: /etc/odoo/
       volumes:
       - name: emk-pvc-apps-log-vol
         persistentVolumeClaim:

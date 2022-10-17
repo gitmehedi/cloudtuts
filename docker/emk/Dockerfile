@@ -58,17 +58,17 @@ RUN python -m pip install -r /mnt/requirements.txt
 
 
 WORKDIR /mnt/addons/osapps
-RUN git clone -b server-tools --single-branch https://github.com/gitmehedi/oca_addons.git server-tools 
-    # && git clone -b contract --single-branch https://github.com/gitmehedi/oca_addons.git contract \
-    # && git clone -b event --single-branch https://github.com/gitmehedi/oca_addons.git event \
-    # && git clone -b hr --single-branch https://github.com/gitmehedi/oca_addons.git hr \
-    # && git clone -b operating-unit --single-branch https://github.com/gitmehedi/oca_addons.git operating-unit \
-    # && git clone -b partner-contact --single-branch https://github.com/gitmehedi/oca_addons.git partner-contact \
-    # && git clone -b reporting-engine --single-branch https://github.com/gitmehedi/oca_addons.git reporting-engine \
-    # && git clone -b sale-workflow --single-branch https://github.com/gitmehedi/oca_addons.git sale-workflow \
-    # && git clone -b vertical-association --single-branch https://github.com/gitmehedi/oca_addons.git vertical-association \
-    # && git clone -b tko-addons --single-branch https://github.com/gitmehedi/oca_addons.git tko-addons \
-    # && git clone -b oca --single-branch https://github.com/gitmehedi/oca_addons.git oca
+RUN git clone -b server-tools --single-branch https://github.com/gitmehedi/oca_addons.git server-tools \
+    && git clone -b contract --single-branch https://github.com/gitmehedi/oca_addons.git contract \
+    && git clone -b event --single-branch https://github.com/gitmehedi/oca_addons.git event \
+    && git clone -b hr --single-branch https://github.com/gitmehedi/oca_addons.git hr \
+    && git clone -b operating-unit --single-branch https://github.com/gitmehedi/oca_addons.git operating-unit \
+    && git clone -b partner-contact --single-branch https://github.com/gitmehedi/oca_addons.git partner-contact \
+    && git clone -b reporting-engine --single-branch https://github.com/gitmehedi/oca_addons.git reporting-engine \
+    && git clone -b sale-workflow --single-branch https://github.com/gitmehedi/oca_addons.git sale-workflow \
+    && git clone -b vertical-association --single-branch https://github.com/gitmehedi/oca_addons.git vertical-association \
+    && git clone -b tko-addons --single-branch https://github.com/gitmehedi/oca_addons.git tko-addons \
+    && git clone -b oca --single-branch https://github.com/gitmehedi/oca_addons.git oca
 
 
 # Add application repository

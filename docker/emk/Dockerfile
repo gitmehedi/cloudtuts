@@ -40,8 +40,9 @@ RUN set -x; \
 
 # Mount /var/lib/odoo to allow restoring filestore and /mnt/extra-addons for users addons
 RUN mkdir -p /mnt/extra-addons \
-    && mkdir -p  /mnt/extra-addons/custom \
-    && mkdir -p /mnt/extra-addons/osapps \
+    mkdir -p /mnt/addons \
+    && mkdir -p  /mnt/addons/custom \
+    && mkdir -p /mnt/addons/osapps \
     && chown -R odoo:odoo /mnt/extra-addons \
     && chmod 2777 /mnt/extra-addons \
 
@@ -56,22 +57,22 @@ COPY ./requirements.txt /mnt/requirements.txt
 RUN python -m pip install -r /mnt/requirements.txt
 
 
-WORKDIR /mnt/extra-addons/osapps
-RUN git clone -b server-tools --single-branch https://github.com/gitmehedi/oca_addons.git server-tools \
-    && git clone -b contract --single-branch https://github.com/gitmehedi/oca_addons.git contract \
-    && git clone -b event --single-branch https://github.com/gitmehedi/oca_addons.git event \
-    && git clone -b hr --single-branch https://github.com/gitmehedi/oca_addons.git hr \
-    && git clone -b operating-unit --single-branch https://github.com/gitmehedi/oca_addons.git operating-unit \
-    && git clone -b partner-contact --single-branch https://github.com/gitmehedi/oca_addons.git partner-contact \
-    && git clone -b reporting-engine --single-branch https://github.com/gitmehedi/oca_addons.git reporting-engine \
-    && git clone -b sale-workflow --single-branch https://github.com/gitmehedi/oca_addons.git sale-workflow \
-    && git clone -b vertical-association --single-branch https://github.com/gitmehedi/oca_addons.git vertical-association \
-    && git clone -b tko-addons --single-branch https://github.com/gitmehedi/oca_addons.git tko-addons \
-    && git clone -b oca --single-branch https://github.com/gitmehedi/oca_addons.git oca
+WORKDIR /mnt/addons/osapps
+RUN git clone -b server-tools --single-branch https://github.com/gitmehedi/oca_addons.git server-tools 
+    # && git clone -b contract --single-branch https://github.com/gitmehedi/oca_addons.git contract \
+    # && git clone -b event --single-branch https://github.com/gitmehedi/oca_addons.git event \
+    # && git clone -b hr --single-branch https://github.com/gitmehedi/oca_addons.git hr \
+    # && git clone -b operating-unit --single-branch https://github.com/gitmehedi/oca_addons.git operating-unit \
+    # && git clone -b partner-contact --single-branch https://github.com/gitmehedi/oca_addons.git partner-contact \
+    # && git clone -b reporting-engine --single-branch https://github.com/gitmehedi/oca_addons.git reporting-engine \
+    # && git clone -b sale-workflow --single-branch https://github.com/gitmehedi/oca_addons.git sale-workflow \
+    # && git clone -b vertical-association --single-branch https://github.com/gitmehedi/oca_addons.git vertical-association \
+    # && git clone -b tko-addons --single-branch https://github.com/gitmehedi/oca_addons.git tko-addons \
+    # && git clone -b oca --single-branch https://github.com/gitmehedi/oca_addons.git oca
 
 
 # Add application repository
-WORKDIR /mnt/extra-addons/custom
+WORKDIR /mnt/addons/custom
 ARG SSH_KEY
 RUN git config --global url."https://${SSH_KEY}:@github.com/".insteadOf "https://github.com/"
 RUN git clone -b emk_dev --single-branch https://github.com/genweb2/gbs.git emk
@@ -85,11 +86,11 @@ COPY ./odoo.conf /etc/odoo/
 RUN chmod +x /mnt/entrypoint.sh \
     && chown odoo:odoo /etc/odoo/odoo.conf \
     && chown odoo:odoo /mnt/entrypoint.sh \
-    && chown -R odoo:odoo /mnt/extra-addons/osapps \
-    && chown -R odoo:odoo /mnt/extra-addons/custom \
+    && chown -R odoo:odoo /mnt/addons/osapps \
+    && chown -R odoo:odoo /mnt/addons/custom \
     && chown -R odoo:odoo /etc/odoo \
-    && chmod 777 -R /mnt/extra-addons/osapps \
-    && chmod 777 -R /mnt/extra-addons/custom \
+    && chmod 777 -R /mnt/addons/osapps \
+    && chmod 777 -R /mnt/addons/custom \
     && chmod 777 -R /etc/odoo
 
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]

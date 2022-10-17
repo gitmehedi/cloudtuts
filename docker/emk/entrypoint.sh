@@ -23,6 +23,11 @@ check_config "db_port" "$PORT"
 check_config "db_user" "$USER"
 check_config "db_password" "$PASSWORD"
 
+# Create and move odoo modules
+mv /mnt/addons/* /mnt/extra-addons
+chmod 777 -R /mnt/extra-addons
+
+
 case "$1" in
     -- | odoo)
         shift

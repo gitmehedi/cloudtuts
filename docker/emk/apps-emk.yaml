@@ -61,7 +61,7 @@ spec:
       # - name: emk-pvc-apps-log-vol
       #   persistentVolumeClaim:
       #     claimName: emk-pvc-apps-log
-      # - name: emk-pvc-apps-addons-vol
+      - name: emk-pvc-apps-addons-vol
         persistentVolumeClaim:
           claimName: emk-pvc-apps-addons
       - name: emk-pv-apps-config-vol

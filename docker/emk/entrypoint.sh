@@ -18,6 +18,7 @@ function check_config() {
         DB_ARGS+=("${value}")
    fi;
 }
+ODOO_RC='/etc/odoo/odoo.conf'
 check_config "db_host" "$HOST"
 check_config "db_port" "$PORT"
 check_config "db_user" "$USER"
@@ -37,13 +38,13 @@ case "$1" in
     -- | odoo)
         shift
         if [[ "$1" == "scaffold" ]] ; then
-            exec odoo "$@"
+            exec odoo "$ODOO_RC" "$@" -u all
         else
-            exec odoo "$@" "${DB_ARGS[@]}"
+            exec odoo "$ODOO_RC" "$@" "${DB_ARGS[@]}" -u all
         fi
         ;;
     -*)
-        exec odoo "$@" "${DB_ARGS[@]}"
+        exec odoo "$@" "${DB_ARGS[@]}" -u all
         ;;
     *)
         exec "$@"

@@ -73,7 +73,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   capacity:
-    storage: 5Gi
+    storage: 7Gi
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: manual
   hostPath:
@@ -107,7 +107,7 @@ spec:
   storageClassName: manual
   resources:
     requests:
-      storage: 5Gi
+      storage: 7Gi
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

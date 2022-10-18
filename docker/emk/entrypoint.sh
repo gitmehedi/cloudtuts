@@ -26,11 +26,12 @@ check_config "db_password" "$PASSWORD"
 
 # Create and move odoo modules
 mv /mnt/addons/* /mnt/extra-addons
-chmod 777 -R /mnt/extra-addons
 chown odoo:odoo -R /mnt/extra-addons
-chmod 777 -R /mnt/extra-addons
 chown odoo:odoo -R /var/lib/odoo
+chmod +x -R /mnt/extra-addons
+chmod +x -R /var/lib/odoo
 
+# Remove Temporaty Addons Directory
 rm -rf /mnt/addons
 
 

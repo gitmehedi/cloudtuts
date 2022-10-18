@@ -40,12 +40,10 @@ RUN set -x; \
 
 # Mount /var/lib/odoo to allow restoring filestore and /mnt/extra-addons for users addons
 RUN mkdir -p /mnt/extra-addons \
-    mkdir -p /mnt/addons \
-    && mkdir -p  /mnt/addons/custom \
-    && mkdir -p /mnt/addons/osapps \
+    && mkdir -p /mnt/extra-addons/custom \
+    && mkdir -p /mnt/extra-addons/osapps \
     && chown -R odoo:odoo /mnt/extra-addons \
     && chmod 2777 /mnt/extra-addons \
-
     # @BUGFIX
     # During the database creation process, the system creates an empty filestore dir
     # with root:root permission, returning a permission error.
@@ -57,7 +55,7 @@ COPY ./requirements.txt /mnt/requirements.txt
 RUN python -m pip install -r /mnt/requirements.txt
 
 
-WORKDIR /mnt/addons/osapps
+WORKDIR /mnt/extra-addons/osapps
 RUN git clone -b server-tools --single-branch https://github.com/gitmehedi/oca_addons.git server-tools \
     && git clone -b contract --single-branch https://github.com/gitmehedi/oca_addons.git contract \
     && git clone -b event --single-branch https://github.com/gitmehedi/oca_addons.git event \
@@ -72,7 +70,7 @@ RUN git clone -b server-tools --single-branch https://github.com/gitmehedi/oca_a
 
 
 # Add application repository
-WORKDIR /mnt/addons/custom
+WORKDIR /mnt/extra-addons/custom
 ARG SSH_KEY
 RUN git config --global url."https://${SSH_KEY}:@github.com/".insteadOf "https://github.com/"
 RUN git clone -b emk_dev --single-branch https://github.com/genweb2/gbs.git emk
@@ -86,12 +84,10 @@ COPY ./odoo.conf /etc/odoo/
 RUN chmod +x /mnt/entrypoint.sh \
     && chown odoo:odoo /etc/odoo/odoo.conf \
     && chown odoo:odoo /mnt/entrypoint.sh \
-    && chown -R odoo:odoo /mnt/addons/osapps \
-    && chown -R odoo:odoo /mnt/addons/custom \
+    && chown -R odoo:odoo /mnt/extra-addons \
     && chown -R odoo:odoo /etc/odoo \
-    && chmod 777 -R /mnt/addons/osapps \
-    && chmod 777 -R /mnt/addons/custom \
-    && chmod 777 -R /etc/odoo
+    && chmod +x -R /mnt/extra-addons \
+    && chmod +x -R /etc/odoo
 
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
 

@@ -85,9 +85,8 @@ RUN chmod +x /mnt/entrypoint.sh \
     && chown odoo:odoo /etc/odoo/odoo.conf \
     && chown odoo:odoo /mnt/entrypoint.sh \
     && chown -R odoo:odoo /mnt/extra-addons \
-    && chown -R odoo:odoo /etc/odoo \
-    && chmod +x -R /mnt/extra-addons \
-    && chmod +x -R /etc/odoo
+    && chown -R odoo:odoo /etc/odoo/ \
+    && chmod +x -R /mnt/extra-addons/ 
 
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
 

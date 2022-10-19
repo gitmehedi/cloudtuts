@@ -80,22 +80,6 @@ spec:
     path: /mnt/emkpvappslog001/
 ---
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: emkpvappsaddons002
-  labels:
-    type: local
-spec:
-  accessModes:
-    - ReadWriteOnce
-  capacity:
-    storage: 5Gi
-  persistentVolumeReclaimPolicy: Recycle
-  storageClassName: manual
-  hostPath:
-    path: /mnt/emkpvappsaddons002/
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: emk-pvc-apps-log
@@ -108,17 +92,4 @@ spec:
   resources:
     requests:
       storage: 7Gi
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: emk-pvc-apps-addons
-  labels:
-    app: emk-apps
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: manual
-  resources:
-    requests:
-      storage: 5Gi
+

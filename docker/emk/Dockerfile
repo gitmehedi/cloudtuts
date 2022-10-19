@@ -43,7 +43,7 @@ RUN mkdir -p /mnt/extra-addons \
     && mkdir -p /mnt/extra-addons/custom \
     && mkdir -p /mnt/extra-addons/osapps \
     && chown -R odoo:odoo /mnt/extra-addons \
-    && chmod 2777 /mnt/extra-addons \
+    && chmod 777 -R /mnt/extra-addons \
     # @BUGFIX
     # During the database creation process, the system creates an empty filestore dir
     # with root:root permission, returning a permission error.

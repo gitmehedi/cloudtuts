@@ -24,8 +24,8 @@ check_config "db_port" "$PORT"
 check_config "db_user" "$USER"
 check_config "db_password" "$PASSWORD"
 
-mkdir -m 777 /var/lib/odoo/filestore 
-chown -R odoo:odoo /var/lib/odoo/filestore
+chown -R odoo:odoo /var/lib/odoo/
+chmod 777 -R /var/lib/odoo/
 
 case "$1" in
     -- | odoo)

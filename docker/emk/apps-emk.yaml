@@ -53,15 +53,10 @@ spec:
           volumeMounts:
           - name: emk-pvc-apps-log-vol
             mountPath: /var/lib/odoo
-          - name: emk-pvc-apps-addons-vol
-            mountPath: /mnt/extra-addons
       volumes:
       - name: emk-pvc-apps-log-vol
         persistentVolumeClaim:
           claimName: emk-pvc-apps-log
-      - name: emk-pvc-apps-addons-vol
-        persistentVolumeClaim:
-          claimName: emk-pvc-apps-addons
 ---
 apiVersion: v1
 kind: PersistentVolume

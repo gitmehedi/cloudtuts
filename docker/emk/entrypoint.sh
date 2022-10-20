@@ -31,13 +31,16 @@ case "$1" in
     -- | odoo)
         shift
         if [[ "$1" == "scaffold" ]] ; then
-            exec odoo "$ODOO_RC" "$@" -u all
+            # exec odoo "$ODOO_RC" "$@" -u all
+            exec odoo "$@" "${DB_ARGS[@]}"
         else
-            exec odoo "$ODOO_RC" "$@" "${DB_ARGS[@]}" -u all
+            # exec odoo "$ODOO_RC" "$@" "${DB_ARGS[@]}" -u all
+            exec odoo "$@" "${DB_ARGS[@]}"
         fi
         ;;
     -*)
-        exec odoo "$@" "${DB_ARGS[@]}" -u all
+        # exec odoo "$@" "${DB_ARGS[@]}" -u all
+        exec odoo "$@" "${DB_ARGS[@]}"
         ;;
     *)
         exec "$@"

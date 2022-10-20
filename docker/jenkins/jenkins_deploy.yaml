@@ -4,6 +4,12 @@ metadata:
   name: jenkins
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+      tier: ci-cd
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
@@ -33,6 +39,7 @@ metadata:
   name: jenkins
   labels:
     app: jenkins
+    tier: ci-cd
 spec:
   ports:
     - port: 8069

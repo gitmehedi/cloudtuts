@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: jenkins
-          image: jenkins
+          image: jenkins/jenkins
           env:
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false

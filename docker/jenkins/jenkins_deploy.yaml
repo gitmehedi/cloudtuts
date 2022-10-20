@@ -43,7 +43,7 @@ metadata:
     tier: ci-cd
 spec:
   ports:
-    - port: 8069
+    - port: 8080
   selector:
     app: jenkins
   type: NodePort

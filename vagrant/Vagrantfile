@@ -28,8 +28,12 @@ Vagrant.configure("2") do |config|
     node.vm.box = "ubuntu/focal64"
     node.vm.provider "virtualbox" do |vb|
       vb.name = "k8m"
-      vb.memory = 4096
+      vb.memory = 2048
       vb.cpus = 2
+    end
+    Vagrant.configure("2") do |config|
+      config.ssh.username = "nopaws"
+      config.ssh.password = "code200!"
     end
     node.vm.hostname = "k8m"
     node.vm.network "private_network", ip: "192.168.56.53"  
@@ -47,6 +51,10 @@ Vagrant.configure("2") do |config|
       vb.name = "k8w1"
       vb.memory = 2048
       vb.cpus = 2
+    end
+    Vagrant.configure("2") do |config|
+      config.ssh.username = "nopaws"
+      config.ssh.password = "code200!"
     end
     node.vm.hostname = "k8w1"
     node.vm.network "private_network", ip: "192.168.56.54"  

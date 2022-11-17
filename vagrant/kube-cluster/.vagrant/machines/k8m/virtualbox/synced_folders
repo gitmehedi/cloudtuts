@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/odoo/cloudnative/cloudtuts/vagrant/kube-cluster","disabled":false,"__vagrantfile":true}}}

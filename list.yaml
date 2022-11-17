@@ -1,0 +1,65 @@
+pipeline{
+    agent any
+    stages{
+        stage("Build"){
+            steps{
+                withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'kubernetes', contextName: '', credentialsId: 'TestKubernetes', namespace: 'kube-system', serverUrl: 'https://192.168.56.60:6443']]) {
+                kubectl apply -f https://github.com/collabnix/kubelabs/blob/master/pods101/pods01.yaml
+              }
+                
+            }
+        }
+    }
+
+
+pipeline{
+  agent any
+
+  stages{
+    stage("Build"){
+      steps{
+        sh 'kubectl get po'
+      }
+    }
+  }
+}
+
+
+
+pipeline{
+  agent { label 'k8m' }
+  
+  stages{
+    stage("DELETE POD"){
+      steps{
+        sh '''
+          kubectl delete pod mehedi
+          
+          kubectl get po
+        '''
+      }
+    }
+    stage("CREATE POD"){
+      steps{
+        sh '''
+          kubectl run mehedi --image nginx      
+        '''
+      }
+    }
+    stage("CLUSTER INFO"){
+      steps{
+          sh '''
+            kubectl get po      
+          '''
+      }
+  }
+}
+   
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-secret-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: nginx

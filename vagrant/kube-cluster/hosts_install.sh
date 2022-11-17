@@ -1,10 +1,7 @@
 #!/bin/bash
 
 
-# Add route
-
 sudo apt-get install -y net-tools
-sudo route add default gw 192.168.56.1
 
 
 # Add host for cluster

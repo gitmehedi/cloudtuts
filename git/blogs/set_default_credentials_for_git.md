@@ -7,6 +7,7 @@
     - [Step 3: To set git creadentils for github](#step-3-to-set-git-creadentils-for-github)
     - [Step 4: To save the credentils forever, use following](#step-4-to-save-the-credentils-forever-use-following)
     - [Step 5: To check the inputs, type the below command as depicted](#step-5-to-check-the-inputs-type-the-below-command-as-depicted)
+    - [References:](#references)
 
 <!-- /TOC -->
 

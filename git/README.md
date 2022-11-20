@@ -35,4 +35,4 @@ $ git config --global credential.helper store
 $ git config --list --show-origin
 
 ```
-<img src="img/show_origin.png" width="400" height="200"/>
+<img src="img/show_origin.png" />

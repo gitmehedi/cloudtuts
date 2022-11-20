@@ -32,7 +32,7 @@ $ git --version
 <img src="blogs/img/git-ubuntu-install.png" width="830" height="320" />
 
 ## Tutorials
-* ### [Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
+* [Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
 
 
 

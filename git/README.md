@@ -6,7 +6,7 @@
     - [Installation](#installation)
         - [Ubuntu](#ubuntu)
     - [Tutorials](#tutorials)
-        - [* ### Set Default Credentials for Git](#--set-default-credentials-for-git)
+        - [Set Default Credentials for Git](#set-default-credentials-for-git)
     - [References:](#references)
 
 <!-- /TOC -->
@@ -16,6 +16,7 @@
 
 ## Installation
 Git installation depends on operating system like linux,ubuntu,mac,windows. We will installing in major os
+
 ### Ubuntu
 You will need an Ubuntu 20.04 server with a non-root superuser account. And following command
 ```bash
@@ -32,7 +33,7 @@ $ git --version
 <img src="blogs/img/git-ubuntu-install.png" width="830" height="320" />
 
 ## Tutorials
-* [Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
+### [Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
 
 
 

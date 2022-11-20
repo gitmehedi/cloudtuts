@@ -1,13 +1,20 @@
-# Github
+<div align="center">
+    <img src="blogs/img/git_profile.png" height="70" alt="Ricochet Logo">
+    <h1>Git Documentation</h1>
+    <strong>This git documentation specially depicts some of cool tutorilas which used in day to day life.</strong>
+</div>
+
+<br/>    
+
+
 <!-- TOC -->
 
-- [Github](#github)
-    - [Introduction](#introduction)
-    - [Installation](#installation)
-        - [Ubuntu](#ubuntu)
-    - [Tutorials](#tutorials)
-        - [1. Set Default Credentials for Git](#1-set-default-credentials-for-git)
-    - [References:](#references)
+- [Introduction](#introduction)
+- [Installation](#installation)
+    - [Ubuntu](#ubuntu)
+- [Tutorials](#tutorials)
+    - [1. Set Default Credentials for Git](#1-set-default-credentials-for-git)
+- [References:](#references)
 
 <!-- /TOC -->
 
@@ -39,3 +46,4 @@ $ git --version
 
 ## References:
 * https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04
+* https://github.com/abhisheknaiidu/ricochet-frontend/blob/v2/README.md

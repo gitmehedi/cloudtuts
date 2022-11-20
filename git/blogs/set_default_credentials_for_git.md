@@ -44,3 +44,8 @@ $ git config --list --show-origin
 
 ```
 <img src="img/show_origin.png" width="830" height="320"/>
+
+
+
+## References:
+* https://www.geeksforgeeks.org/how-to-set-git-username-and-password-in-gitbash/

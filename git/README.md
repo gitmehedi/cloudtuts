@@ -6,7 +6,8 @@
     - [Installation](#installation)
         - [Ubuntu](#ubuntu)
     - [Tutorials](#tutorials)
-        - [Set Default Credentials for Git](#set-default-credentials-for-git)
+        - [* ### Set Default Credentials for Git](#--set-default-credentials-for-git)
+    - [References:](#references)
 
 <!-- /TOC -->
 
@@ -31,4 +32,9 @@ $ git --version
 <img src="blogs/img/git-ubuntu-install.png" width="830" height="320" />
 
 ## Tutorials
-### [Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
+* ### [Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
+
+
+
+## References:
+* https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04

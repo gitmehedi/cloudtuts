@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="blogs/img/git_profile.png" height="70" alt="Ricochet Logo">
+    <img src="blogs/img/git_profile.png" height="70" alt="Git Logo">
     <h1>Git Documentation</h1>
     <strong>This git documentation specially depicts some of cool tutorilas which used in day to day life.</strong>
 </div>

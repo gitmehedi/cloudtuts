@@ -6,7 +6,7 @@
     - [Installation](#installation)
         - [Ubuntu](#ubuntu)
     - [Tutorials](#tutorials)
-        - [Set Default Credentials for Git](#set-default-credentials-for-git)
+        - [1. Set Default Credentials for Git](#1-set-default-credentials-for-git)
     - [References:](#references)
 
 <!-- /TOC -->
@@ -33,7 +33,7 @@ $ git --version
 <img src="blogs/img/git-ubuntu-install.png" width="830" height="320" />
 
 ## Tutorials
-### [Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
+### [1. Set Default Credentials for Git](blogs/set_default_credentials_for_git.md)
 
 
 

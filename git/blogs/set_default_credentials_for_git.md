@@ -12,6 +12,7 @@
 <!-- /TOC -->
 
 
+
 ## Step 1: Open terminal for git access  
 
 <img src="img/terminal.png" width="830" height="320"/>
